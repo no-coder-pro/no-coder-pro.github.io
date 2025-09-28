@@ -1,12 +1,7 @@
 {
   "rewrites": [
     { "source": "/cc-gen", "destination": "https://cc-gen-chi.vercel.app/" },
-    { "source": "/cc-gen-backup", "destination": "https://cc-gen-backup.vercel.app/" },
-    { "source": "/fakexy", "destination": "https://fakexy-api-sage.vercel.app/" },
-    { "source": "/bin-checker", "destination": "https://bin-checker-vrcl.vercel.app/" },
-    { "source": "/b3-checker", "destination": "https://b3-api.vercel.app/" },
-    { "source": "/cc-checker", "destination": "https://cc-checker-faker.vercel.app/" },
-    { "source": "/all-in-one", "destination": "https://cc-tool-one-for-all.vercel.app/" },
-    { "source": "/gemini-api", "destination": "https://gemini-ai-one-for-all-seven.vercel.app/" }
+    { "source": "/cc-gen/script.js", "destination": "https://cc-gen-chi.vercel.app/script.js" },
+    { "source": "/cc-gen/style.css", "destination": "https://cc-gen-chi.vercel.app/style.css" }
   ]
 }
