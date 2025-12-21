@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         /* হেডার */
         header {
             display: flex;
@@ -55,8 +56,8 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .profile-container {
@@ -78,7 +79,7 @@
             left: 0;
             transition: all 0.5s ease;
         }
-        
+
         .main-image {
             z-index: 2;
             transform: translate(-5px, -5px);
@@ -90,7 +91,7 @@
             filter: grayscale(50%) brightness(90%);
             opacity: 0.8;
         }
-        
+
         .profile-container:hover .main-image {
             transform: translate(5px, 5px);
             filter: grayscale(50%) brightness(90%);
@@ -127,11 +128,14 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .contact-info p {
             margin: 5px 0;
             color: #555;
-            font-size: 14px;
+            font-size: 16px;
+            font-style: italic;
+            border-left: 3px solid #3498db;
+            padding-left: 15px;
         }
 
         /* ইনফো সেকশন */
@@ -157,13 +161,13 @@
             font-size: 16px;
             color: #555;
         }
-        
+
         .info-section h3 {
             font-size: 20px;
             margin-bottom: 10px;
             color: #2c3e50;
         }
-        
+
         /* দক্ষতার স্টাইল */
         .skills-list {
             display: flex;
@@ -198,7 +202,7 @@
             color: #2c3e50;
             text-align: center;
         }
-        
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -241,26 +245,26 @@
             margin-bottom: 0;
             font-size: 14px;
         }
-        
+
         .join-section {
             text-align: center;
             margin-top: 60px;
             padding-top: 20px;
             border-top: 1px solid #ddd;
         }
-        
+
         .join-section h4 {
             font-size: 22px;
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        
+
         .join-links {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        
+
         .join-links a {
             color: #3498db;
             text-decoration: none;
@@ -268,7 +272,7 @@
             font-size: 16px;
             transition: color 0.3s ease;
         }
-        
+
         .join-links a:hover {
             color: #2980b9;
         }
@@ -279,15 +283,21 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             .profile-section {
+                align-items: center;
+                text-align: center;
                 margin-bottom: 30px;
             }
+
             .info-section ul {
                 text-align: center;
             }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
             .join-links {
                 flex-direction: column;
                 gap: 10px;
@@ -295,43 +305,49 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="logo">Mahir Labib</div>
             <nav>
-                </nav>
+            </nav>
         </header>
-        
+
         <section class="main-content">
             <div class="profile-section">
                 <div class="profile-container">
-                    <img src="https://avatars.githubusercontent.com/u/204073946?v=4" alt="প্রধান প্রোফাইল ছবি" class="profile-image main-image">
-                    
-                    <img src="project-images/no_coder_pro.jpg" alt="বিকল্প প্রোফাইল ছবি" class="profile-image secondary-image">
+                    <img src="https://avatars.githubusercontent.com/u/204073946?v=4" alt="প্রধান প্রোফাইল ছবি"
+                        class="profile-image main-image">
+
+                    <img src="project-images/no_coder_pro.jpg" alt="বিকল্প প্রোফাইল ছবি"
+                        class="profile-image secondary-image">
                 </div>
-                
+
+                <div class="contact-info">
+                    <p> “Busyness causes human talent to lie dormant.”<br>
+                        — Mahir Labib
+                    </p>
+                </div>
+
                 <div class="social-links">
                     <a href="https://t.me/no_coder_pro"><i class="fab fa-telegram"></i></a>
                     <a href="https://www.youtube.com/@AniRailexp"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.facebook.com/no.coder.max"><i class="fab fa-facebook"></i></a>
                 </div>
-                
-                <div class="contact-info">
-                    <p> “Busyness causes human talent to lie dormant.”<br>
-                            — Mahir Labib
-                    </p>
-                </div>
+            </div>
 
-            
             <div class="info-section">
                 <h1>Raisul Islam (aka Mahir Labib)</h1>
                 <h2>I just know html and css but love to create projects using AI</h2>
-                
-                <p>Yes, its true i don't know any coding language i use AI to build my projects but one day i will make my own project without taking any help from AI</p>
-                
-                <p>It all started from a friend named Tofazzol Hossain from whom i got inspired to make project like him him knows much more then me but still i try to learn from him and give a better version of his work</p>
-                
+
+                <p>Yes, its true i don't know any coding language i use AI to build my projects but one day i will make
+                    my own project without taking any help from AI</p>
+
+                <p>It all started from a friend named Tofazzol Hossain from whom i got inspired to make project like him
+                    him knows much more then me but still i try to learn from him and give a better version of his work
+                </p>
+
                 <h3>Skills</h3>
                 <ul class="skills-list">
                     <li>HTML</li>
@@ -345,12 +361,12 @@
                 </ul>
             </div>
         </section>
-        
+
         <hr>
-        
+
         <section class="projects-section">
             <h3>My Projets</h3>
-            
+
             <div class="projects-grid">
                 <a href="https://bbinl.site/cc-gen/" class="project-card">
                     <img src="project-images/cc_generator.png" alt="Classic CC Generator" class="project-image">
@@ -359,7 +375,7 @@
                         <p>A Tool To Generate Testing CC Using Advance Luhn Algorithm</p>
                     </div>
                 </a>
-                
+
                 <a href="https://bbinl.site/cc-checker-faker/" class="project-card">
                     <img src="project-images/cc_checker.png" alt="CC Checker & Faker" class="project-image">
                     <div class="project-info">
@@ -367,7 +383,7 @@
                         <p>Uses Random Test Getway To Give Valid Testing CC</p>
                     </div>
                 </a>
-                
+
                 <a href="https://bbinl.site/b3-checker/" class="project-card">
                     <img src="project-images/b3_cc_checker.png" alt="B3 CC Checker" class="project-image">
                     <div class="project-info">
@@ -383,7 +399,7 @@
                         <p>Real Stripe Intrigated CC Checker</p>
                     </div>
                 </a>
-                
+
                 <a href="https://bbinl.site/checker-top/" class="project-card">
                     <img src="project-images/checker_top.png" alt="Checker.Top" class="project-image">
                     <div class="project-info">
@@ -391,7 +407,7 @@
                         <p>A Web Archive Of checker.top Site</p>
                     </div>
                 </a>
-                
+
                 <a href="https://bbinl.site/gen-chk/" class="project-card">
                     <img src="project-images/all_gen_check.png" alt="All-in-One Gen & Chk" class="project-image">
                     <div class="project-info">
@@ -421,4 +437,5 @@
         </section>
     </div>
 </body>
+
 </html>
