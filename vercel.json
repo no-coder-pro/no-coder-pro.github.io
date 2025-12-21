@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/cc-gen", "destination": "https://cc-gen-chi.vercel.app/" },
-    { "source": "/cc-gen/script.js", "destination": "https://cc-gen-chi.vercel.app/script.js" },
-    { "source": "/cc-gen/style.css", "destination": "https://cc-gen-chi.vercel.app/style.css" }
-  ]
-}
