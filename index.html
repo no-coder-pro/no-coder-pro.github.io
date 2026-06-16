@@ -1,658 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="PJMWlbKJPvfOlgarzQFjptCljNThbShxhS8QXm72DY0" />
-    <title>No Coder Pro | Mahir Labib</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="project-images/code.png">
-    <style>
-        :root {
-            --primary: #00d4ff;
-            --primary-dark: #007bff;
-            --secondary: #6c757d;
-            --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(123, 31, 162, 0.05) 0%, transparent 40%);
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        .logo {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* হেডার */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            margin-bottom: 60px;
-            animation: fadeInDown 1s ease;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        /* মেইন কন্টেন্ট */
-        .main-content {
-            display: flex;
-            gap: 60px;
-            margin-bottom: 80px;
-            align-items: flex-start;
-        }
-
-        /* প্রোফাইল সেকশন */
-        .profile-section {
-            flex: 0 0 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 30px;
-            animation: fadeInLeft 1s ease;
-        }
-
-        .profile-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--glass-border);
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .main-image {
-            z-index: 2;
-            opacity: 1;
-        }
-
-        .secondary-image {
-            z-index: 1;
-            opacity: 0;
-            transform: scale(1.1);
-        }
-
-        .profile-container:hover .main-image {
-            opacity: 0;
-            transform: scale(0.9);
-        }
-
-        .profile-container:hover .secondary-image {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .contact-info {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid var(--glass-border);
-            width: 100%;
-            position: relative;
-        }
-
-        .contact-info p {
-            color: var(--text-dim);
-            font-size: 15px;
-            font-style: italic;
-            border-left: 4px solid var(--primary);
-            padding-left: 20px;
-            line-height: 1.5;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: var(--bg-dark);
-            transform: translateY(-5px) rotate(8deg);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-        }
-
-        /* ইনফো সেকশন */
-        .info-section {
-            flex: 1;
-            animation: fadeInRight 1s ease;
-        }
-
-        .info-section h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #fff;
-            letter-spacing: -2px;
-        }
-
-        .info-section h2 {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .info-section p {
-            margin-bottom: 25px;
-            font-size: 17px;
-            color: var(--text-dim);
-            max-width: 700px;
-        }
-
-        .skills-container {
-            margin-top: 40px;
-        }
-
-        .skills-container h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            list-style: none;
-        }
-
-        .skills-list li {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition);
-            cursor: default;
-        }
-
-        .skills-list li:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        /* প্রজেক্ট সেকশন */
-        .projects-section {
-            margin-top: 100px;
-        }
-
-        .projects-section h3 {
-            font-size: 42px;
-            margin-bottom: 50px;
-            color: #fff;
-            text-align: center;
-            letter-spacing: -1px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            transition: var(--transition);
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary) 0%, transparent 100%);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 0;
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .project-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .project-image-wrapper {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.6s ease;
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.15);
-        }
-
-        .project-info {
-            padding: 30px;
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: var(--primary);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .project-info h4 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .project-info p {
-            color: var(--text-dim);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex: 1;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 14px;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-link i {
-            transform: translateX(5px);
-        }
-
-        /*footer / join*/
-        .join-section {
-            text-align: center;
-            margin-top: 120px;
-            padding: 60px 40px;
-            background: var(--card-bg);
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            animation: fadeInUp 1s ease;
-        }
-
-        .join-section h4 {
-            font-size: 28px;
-            margin-bottom: 25px;
-            color: #fff;
-        }
-
-        .join-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .join-links a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: rgba(0, 212, 255, 0.05);
-            border-radius: 15px;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .join-links a:hover {
-            background: rgba(0, 212, 255, 0.15);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* রেসপনসিভ ডিজাইন */
-        @media (max-width: 992px) {
-            .main-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .profile-section {
-                align-items: center;
-                flex: none;
-                width: 100%;
-                max-width: 400px;
-            }
-
-            .info-section h1 {
-                font-size: 36px;
-            }
-
-            .info-section p {
-                margin: 0 auto 25px auto;
-            }
-
-            .skills-list {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .join-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="PJMWlbKJPvfOlgarzQFjptCljNThbShxhS8QXm72DY0" />
+  <title>No Coder Pro | Mahir Labib</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="project-images/code.png">
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --primary-rgb: 0, 212, 255;
+      --secondary: #bd53ed;
+      --bg-dark: #030712;
+      --card-bg: rgba(15, 23, 42, 0.4);
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+      --glass-border: rgba(255, 255, 255, 0.05);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(189, 83, 237, 0.06) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .logo {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      border: 2px solid var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(var(--primary-rgb), 0.3);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* হেডার */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      margin-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      border-radius: 2px;
+    }
+
+    /* মেইন কন্টেন্ট */
+    .main-content {
+      display: flex;
+      gap: 50px;
+      margin-bottom: 80px;
+      align-items: flex-start;
+    }
+
+    /* প্রোফাইল সেকশন */
+    .profile-section {
+      flex: 0 0 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+      opacity: 0;
+    }
+
+    .profile-container {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
+    }
+
+    .profile-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .main-image {
+      z-index: 2;
+      opacity: 1;
+    }
+
+    .secondary-image {
+      z-index: 1;
+      opacity: 0;
+      transform: scale(1.08);
+    }
+
+    .profile-container:hover {
+      border-color: rgba(var(--primary-rgb), 0.3);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(var(--primary-rgb), 0.15);
+      transform: translateY(-5px);
+    }
+
+    .profile-container:hover .main-image {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .profile-container:hover .secondary-image {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .contact-info {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info::before {
+      content: '"';
+      position: absolute;
+      font-size: 90px;
+      color: rgba(255, 255, 255, 0.02);
+      top: -30px;
+      right: 10px;
+      font-family: serif;
+      pointer-events: none;
+    }
+
+    .contact-info p {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-style: italic;
+      border-left: 3px solid var(--primary);
+      padding-left: 15px;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-dim);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      transform: translateY(-4px);
+    }
+
+    .social-links a[title="Telegram"]:hover {
+      background: rgba(34, 158, 217, 0.12);
+      border-color: #229ed9;
+      box-shadow: 0 5px 15px rgba(34, 158, 217, 0.25);
+      color: #229ed9;
+    }
+
+    .social-links a[title="YouTube"]:hover {
+      background: rgba(255, 0, 0, 0.1);
+      border-color: #ff0000;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.25);
+      color: #ff0000;
+    }
+
+    .social-links a[title="Facebook"]:hover {
+      background: rgba(24, 119, 242, 0.12);
+      border-color: #1877f2;
+      box-shadow: 0 5px 15px rgba(24, 119, 242, 0.25);
+      color: #1877f2;
+    }
+
+    /* ইনফো সেকশন */
+    .info-section {
+      flex: 1;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      opacity: 0;
+    }
+
+    .info-section h1 {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, #ffffff 40%, #c7d2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-section h2 {
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.06);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 212, 255, 0.15);
+    }
+
+    .info-section p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    .info-section p strong {
+      color: #fff;
+    }
+
+    .skills-container {
+      margin-top: 35px;
+    }
+
+    .skills-container h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .skills-list li {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .skills-list li:hover {
+      background: rgba(var(--primary-rgb), 0.08);
+      border-color: rgba(var(--primary-rgb), 0.4);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.1);
+    }
+
+    /* প্রজেক্ট সেকশন */
+    .projects-section {
+      margin-top: 80px;
+    }
+
+    .projects-section h3 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: -1px;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+      opacity: 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Staggered load animations */
+    .projects-grid a:nth-child(1) { animation-delay: 0.35s; }
+    .projects-grid a:nth-child(2) { animation-delay: 0.4s; }
+    .projects-grid a:nth-child(3) { animation-delay: 0.45s; }
+    .projects-grid a:nth-child(4) { animation-delay: 0.5s; }
+    .projects-grid a:nth-child(5) { animation-delay: 0.55s; }
+    .projects-grid a:nth-child(6) { animation-delay: 0.6s; }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(var(--primary-rgb), 0.3);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(var(--primary-rgb), 0.15);
+    }
+
+    .project-image-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-image-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(3, 7, 18, 0.7), transparent);
+      pointer-events: none;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.06);
+    }
+
+    .project-info {
+      padding: 24px;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      background: rgba(0, 212, 255, 0.06);
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 212, 255, 0.12);
+      align-self: flex-start;
+    }
+
+    .project-info h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .project-info p {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+
+    .project-link i {
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-link {
+      color: #fff;
+    }
+
+    .project-card:hover .project-link i {
+      transform: translateX(4px);
+    }
+
+    /*footer / join */
+    .join-section {
+      text-align: center;
+      margin-top: 100px;
+      padding: 50px 30px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.002) 100%);
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+      opacity: 0;
+    }
+
+    .join-section::before {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 70%);
+      top: -125px;
+      left: -125px;
+      pointer-events: none;
+    }
+
+    .join-section::after {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(189, 83, 237, 0.03) 0%, transparent 70%);
+      bottom: -125px;
+      right: -125px;
+      pointer-events: none;
+    }
+
+    .join-section h4 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .join-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .join-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 12px;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .join-links a:hover {
+      background: rgba(var(--primary-rgb), 0.06);
+      border-color: rgba(var(--primary-rgb), 0.3);
+      transform: translateY(-4px);
+      box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(var(--primary-rgb), 0.08);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* রেসপনসিভ ডিজাইন */
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .profile-section {
+        align-items: center;
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .info-section h1 {
+        font-size: 40px;
+      }
+
+      .info-section p {
+        margin: 0 auto 20px auto;
+      }
+
+      .skills-list {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .join-links {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      
+      .join-links a {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">Mahir Labib</div>
-        </header>
+  <div class="container">
+    <header>
+      <div class="logo">Mahir Labib</div>
+    </header>
 
-        <section class="main-content">
-            <div class="profile-section">
-                <div class="profile-container">
-                    <img src="https://avatars.githubusercontent.com/u/204073946?v=4" alt="Mahir Labib"
-                        class="profile-image main-image">
-                    <img src="project-images/no_coder_pro.jpg" alt="Alternate Mahir"
-                        class="profile-image secondary-image">
-                </div>
+    <section class="main-content">
+      <div class="profile-section">
+        <div class="profile-container">
+          <img src="https://avatars.githubusercontent.com/u/204073946?v=4" alt="Mahir Labib"
+            class="profile-image main-image">
+          <img src="project-images/no_coder_pro.jpg" alt="Alternate Mahir" class="profile-image secondary-image">
+        </div>
 
-                <div class="contact-info">
-                    <p>“Busyness K!lls human talent.”<br>
-                        — Mahir Labib
-                    </p>
-                </div>
+        <div class="contact-info">
+          <p>“Busyness K!lls human talent.”<br>
+            — Mahir Labib
+          </p>
+        </div>
 
-                <div class="social-links">
-                    <a href="https://t.me/no_coder_pro" title="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.youtube.com/@AniRailexp" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.facebook.com/no.coder.max" title="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
+        <div class="social-links">
+          <a href="https://t.me/no_coder_pro" title="Telegram"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.youtube.com/@AniRailexp" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/no.coder.max" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
 
-            <div class="info-section">
-                <h1>Raisul Islam</h1>
-                <h2>Digital Creator & AI Builder</h2>
+      <div class="info-section">
+        <h1>Raisul Islam</h1>
+        <h2>Digital Creator & AI Builder</h2>
 
-                <p>Hello! I'm Raisul Islam, as known as <strong>Mahir Labib</strong>. While my formal coding
-                    knowledge is primarily HTML and CSS, I've mastered the art of using AI to bring complex ideas to
-                    life.</p>
+        <p>Hello! I'm Raisul Islam, as known as <strong>Mahir Labib</strong>. While my formal coding
+          knowledge is primarily HTML and CSS, I've mastered the art of using AI to bring complex ideas to
+          life.</p>
 
-                <p>My journey started with inspiration from my friend Tofazzol Hossain. Today, I focus on refining and
-                    enhancing digital tools, proving that passion and the right tools can bridge any skill gap.</p>
+        <p>My journey started with inspiration from my friend Tofazzol Hossain. Today, I focus on refining and
+          enhancing digital tools, proving that passion and the right tools can bridge any skill gap.</p>
 
-                <div class="skills-container">
-                    <h3>My Arsenal</h3>
-                    <ul class="skills-list">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>AI Prompting</li>
-                        <li>Python (Basics)</li>
-                        <li>UI/UX Design</li>
-                        <li>Project Management</li>
-                        <li>Tool Integration</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <div class="skills-container">
+          <h3>My Arsenal</h3>
+          <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>AI Prompting</li>
+            <li>Python (Basics)</li>
+            <li>UI/UX Design</li>
+            <li>Project Management</li>
+            <li>Tool Integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <section class="projects-section">
-            <h3>Featured Projects</h3>
+    <section class="projects-section">
+      <h3>Featured Projects</h3>
 
-            <div class="projects-grid">
-                <a href="https://bbinl.site/cc-gen/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/cc_generator.png" alt="Classic CC Generator" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Security Tool</div>
-                        <h4>Classic CC Gen</h4>
-                        <p>Advanced Luhn Algorithm based testing card generator with custom parameters.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+      <div class="projects-grid">
+        <a href="cc-gen/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/cc_generator.png" alt="Classic CC Generator" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Security Tool</div>
+            <h4>Classic CC Gen</h4>
+            <p>Advanced Luhn Algorithm based testing card generator with custom parameters.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-                <a href="https://bbinl.site/cc-checker-faker/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/cc_checker.png" alt="CC Checker & Faker" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Validation</div>
-                        <h4>CC Checker Faker</h4>
-                        <p>Simulates real-world testing gateways to validate card performance strings.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+        <a href="cc-checker-faker/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/cc_checker.png" alt="CC Checker & Faker" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Validation</div>
+            <h4>CC Checker Faker</h4>
+            <p>Simulates real-world testing gateways to validate card performance strings.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-                <a href="https://bbinl.site/b3-checker/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/b3_cc_checker.png" alt="B3 CC Checker" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Fintech</div>
-                        <h4>B3 CC Checker</h4>
-                        <p>Deep integration with Braintree API for high-accuracy transaction simulation.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+        <a href="b3-checker/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/b3_cc_checker.png" alt="B3 CC Checker" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Fintech</div>
+            <h4>B3 CC Checker</h4>
+            <p>Deep integration with Braintree API for high-accuracy transaction simulation.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-                <a href="https://bbinl.site/stripe-checker//" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/stripe_cc_checker.png" alt="Stripe CC Checker" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Payment Integration</div>
-                        <h4>Stripe Checker</h4>
-                        <p>Reliable Stripe gateway simulator for testing e-commerce payment flows.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+        <a href="stripe-checker/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/stripe_cc_checker.png" alt="Stripe CC Checker" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Payment Integration</div>
+            <h4>Stripe Checker</h4>
+            <p>Reliable Stripe gateway simulator for testing e-commerce payment flows.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-                <a href="https://bbinl.site/checker-top/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/checker_top.png" alt="Checker.Top" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Web Archive</div>
-                        <h4>Checker.Top</h4>
-                        <p>Checker.top is a web archive tool for generating cc and checking.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+        <a href="checker-top/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/checker_top.png" alt="Checker.Top" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Web Archive</div>
+            <h4>Checker.Top</h4>
+            <p>Checker.top is a web archive tool for generating cc and checking.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-                <a href="https://bbinl.site/gen-chk/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/all_gen_check.png" alt="All-in-One Gen & Chk" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Utility Hub</div>
-                        <h4>AIO Gen & Chk</h4>
-                        <p>The ultimate repository combining all generator and checker tools in one UI.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
+        <a href="fake-address/" class="project-card">
+          <div class="project-image-wrapper">
+            <img src="project-images/fake_address.png" alt="Fake Address gen" class="project-image">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Data Utility</div>
+            <h4>Fake Address Gen</h4>
+            <p>Generates realistic global identity and address data for system testing.</p>
+            <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-                <a href="https://bbinl.site/fake-address/" class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="project-images/fake_address.png" alt="Fake Address gen" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tag">Data Utility</div>
-                        <h4>Fake Address Gen</h4>
-                        <p>Generates realistic global identity and address data for system testing.</p>
-                        <div class="project-link">View Project <i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="join-section">
-            <h4>Stay Connected</h4>
-            <div class="join-links">
-                <a href="https://t.me/no_coder_xone" target="_blank">
-                    <i class="fab fa-telegram-plane"></i> @no_coder_xone
-                </a>
-                <a href="https://t.me/bro_bin_lagbe" target="_blank">
-                    <i class="fas fa-life-ring"></i> Support Channel
-                </a>
-            </div>
-        </section>
-    </div>
+    <section class="join-section">
+      <h4>Stay Connected</h4>
+      <div class="join-links">
+        <a href="https://t.me/no_coder_xone" target="_blank">
+          <i class="fab fa-telegram-plane"></i> @no_coder_xone
+        </a>
+        <a href="https://t.me/bro_bin_lagbe" target="_blank">
+          <i class="fas fa-life-ring"></i> Support Channel
+        </a>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>
