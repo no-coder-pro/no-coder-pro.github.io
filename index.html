@@ -33,7 +33,7 @@
 
     body {
       background-color: var(--bg-dark);
-      background-image: 
+      background-image:
         radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(189, 83, 237, 0.06) 0%, transparent 40%),
         linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
@@ -56,14 +56,17 @@
     ::-webkit-scrollbar {
       width: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: var(--bg-dark);
     }
+
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.08);
       border-radius: 4px;
       border: 2px solid var(--bg-dark);
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(var(--primary-rgb), 0.3);
     }
@@ -71,7 +74,7 @@
     .container {
       max-width: 1140px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 20px;
     }
 
     /* হেডার */
@@ -79,8 +82,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
-      margin-bottom: 50px;
+      padding: 15px 0;
+      margin-bottom: 30px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -109,26 +112,26 @@
     /* মেইন কন্টেন্ট */
     .main-content {
       display: flex;
-      gap: 50px;
-      margin-bottom: 80px;
+      gap: 32px;
+      margin-bottom: 50px;
       align-items: flex-start;
     }
 
     /* প্রোফাইল সেকশন */
     .profile-section {
-      flex: 0 0 300px;
+      flex: 0 0 240px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 24px;
+      gap: 16px;
       animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
       opacity: 0;
     }
 
     .profile-container {
       position: relative;
-      width: 260px;
-      height: 260px;
+      width: 240px;
+      height: 240px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -170,7 +173,7 @@
 
     .profile-container:hover {
       border-color: rgba(var(--primary-rgb), 0.3);
-      box-shadow: 
+      box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.6),
         0 0 25px rgba(var(--primary-rgb), 0.15);
       transform: translateY(-5px);
@@ -189,7 +192,7 @@
     .contact-info {
       background: var(--card-bg);
       backdrop-filter: blur(16px);
-      padding: 20px;
+      padding: 14px 18px;
       border-radius: 16px;
       border: 1px solid var(--glass-border);
       width: 100%;
@@ -224,8 +227,8 @@
     }
 
     .social-links a {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       background: var(--card-bg);
       border: 1px solid var(--glass-border);
       color: var(--text-dim);
@@ -233,7 +236,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 16px;
       transition: var(--transition);
       text-decoration: none;
     }
@@ -272,11 +275,11 @@
     }
 
     .info-section h1 {
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 700;
       margin-bottom: 6px;
       color: #fff;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
       background: linear-gradient(135deg, #ffffff 40%, #c7d2fe 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -297,11 +300,11 @@
     }
 
     .info-section p {
-      margin-bottom: 20px;
-      font-size: 16px;
+      margin-bottom: 12px;
+      font-size: 15px;
       color: var(--text-dim);
       max-width: 680px;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     .info-section p strong {
@@ -309,12 +312,12 @@
     }
 
     .skills-container {
-      margin-top: 35px;
+      margin-top: 20px;
     }
 
     .skills-container h3 {
-      font-size: 20px;
-      margin-bottom: 16px;
+      font-size: 18px;
+      margin-bottom: 10px;
       color: #fff;
       font-weight: 600;
     }
@@ -330,7 +333,7 @@
       background: var(--card-bg);
       border: 1px solid var(--glass-border);
       color: var(--text-main);
-      padding: 6px 16px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 13px;
       font-weight: 500;
@@ -348,12 +351,12 @@
 
     /* প্রজেক্ট সেকশন */
     .projects-section {
-      margin-top: 80px;
+      margin-top: 50px;
     }
 
     .projects-section h3 {
-      font-size: 36px;
-      margin-bottom: 40px;
+      font-size: 30px;
+      margin-bottom: 24px;
       color: #fff;
       text-align: center;
       letter-spacing: -1px;
@@ -363,8 +366,8 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
     }
 
     .project-card {
@@ -385,24 +388,41 @@
     }
 
     /* Staggered load animations */
-    .projects-grid a:nth-child(1) { animation-delay: 0.35s; }
-    .projects-grid a:nth-child(2) { animation-delay: 0.4s; }
-    .projects-grid a:nth-child(3) { animation-delay: 0.45s; }
-    .projects-grid a:nth-child(4) { animation-delay: 0.5s; }
-    .projects-grid a:nth-child(5) { animation-delay: 0.55s; }
-    .projects-grid a:nth-child(6) { animation-delay: 0.6s; }
+    .projects-grid a:nth-child(1) {
+      animation-delay: 0.35s;
+    }
+
+    .projects-grid a:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .projects-grid a:nth-child(3) {
+      animation-delay: 0.45s;
+    }
+
+    .projects-grid a:nth-child(4) {
+      animation-delay: 0.5s;
+    }
+
+    .projects-grid a:nth-child(5) {
+      animation-delay: 0.55s;
+    }
+
+    .projects-grid a:nth-child(6) {
+      animation-delay: 0.6s;
+    }
 
     .project-card:hover {
       transform: translateY(-8px);
       border-color: rgba(var(--primary-rgb), 0.3);
-      box-shadow: 
+      box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.5),
         0 0 25px rgba(var(--primary-rgb), 0.15);
     }
 
     .project-image-wrapper {
       width: 100%;
-      height: 200px;
+      height: 160px;
       overflow: hidden;
       position: relative;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -428,7 +448,7 @@
     }
 
     .project-info {
-      padding: 24px;
+      padding: 18px 20px;
       position: relative;
       z-index: 1;
       flex: 1;
@@ -442,7 +462,7 @@
       color: var(--primary);
       font-weight: 700;
       letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       background: rgba(0, 212, 255, 0.06);
       display: inline-block;
       padding: 2px 8px;
@@ -452,17 +472,17 @@
     }
 
     .project-info h4 {
-      font-size: 20px;
-      margin-bottom: 8px;
+      font-size: 18px;
+      margin-bottom: 6px;
       color: #fff;
       font-weight: 600;
     }
 
     .project-info p {
       color: var(--text-dim);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 12px;
       flex: 1;
     }
 
@@ -492,8 +512,8 @@
     /*footer / join */
     .join-section {
       text-align: center;
-      margin-top: 100px;
-      padding: 50px 30px;
+      margin-top: 60px;
+      padding: 35px 20px;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.002) 100%);
       border-radius: 24px;
       border: 1px solid var(--glass-border);
@@ -526,8 +546,8 @@
     }
 
     .join-section h4 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 22px;
+      margin-bottom: 15px;
       color: #fff;
       font-weight: 600;
     }
@@ -557,7 +577,7 @@
       background: rgba(var(--primary-rgb), 0.06);
       border-color: rgba(var(--primary-rgb), 0.3);
       transform: translateY(-4px);
-      box-shadow: 
+      box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(var(--primary-rgb), 0.08);
     }
@@ -568,6 +588,7 @@
         opacity: 0;
         transform: translateY(15px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -588,6 +609,10 @@
         flex: none;
         width: 100%;
         max-width: 400px;
+      }
+
+      .social-links {
+        justify-content: center;
       }
 
       .info-section h1 {
@@ -613,7 +638,7 @@
         gap: 12px;
         align-items: center;
       }
-      
+
       .join-links a {
         width: 100%;
         max-width: 280px;
@@ -651,26 +676,14 @@
       </div>
 
       <div class="info-section">
-        <h1>Raisul Islam</h1>
-        <h2>Digital Creator & AI Builder</h2>
-
-        <p>Hello! I'm Raisul Islam, as known as <strong>Mahir Labib</strong>. While my formal coding
-          knowledge is primarily HTML and CSS, I've mastered the art of using AI to bring complex ideas to
-          life.</p>
-
-        <p>My journey started with inspiration from my friend Tofazzol Hossain. Today, I focus on refining and
-          enhancing digital tools, proving that passion and the right tools can bridge any skill gap.</p>
-
+        <h1>No Coder Pro</h1>
+        <p>Hello! I'm Raisul Islam, as known as <strong>Mahir Labib</strong></p>
         <div class="skills-container">
           <h3>My Arsenal</h3>
           <ul class="skills-list">
             <li>HTML5</li>
             <li>CSS3</li>
             <li>AI Prompting</li>
-            <li>Python (Basics)</li>
-            <li>UI/UX Design</li>
-            <li>Project Management</li>
-            <li>Tool Integration</li>
           </ul>
         </div>
       </div>
